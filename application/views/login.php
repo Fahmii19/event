@@ -17,12 +17,10 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
+            <a href="<?=site_url('login')?>"><b>EVENT</b>KAMPUS</a>
         </div>
-        <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-
                 <?php
                 if ($this->session->flashdata('error') != '') {
                     echo '<div class="alert alert-danger" role="alert">';
@@ -38,7 +36,6 @@
                     echo '</div>';
                 }
                 ?>
-
 
                 <p class="login-box-msg">Halaman Login</p>
 
@@ -70,13 +67,12 @@
                         <!-- /.col -->
                     </div>
                 </form>
-
-
+                <div class="col-lg-12 text-center mt-3">
+                    <a href="<?=site_url('/')?>">Kembali ke halaman utama</a>
+                </div>
             </div>
-            <!-- /.login-card-body -->
         </div>
     </div>
-    <!-- /.login-box -->
 
     <!-- jQuery -->
     <script src="<?= base_url() ?>/assets/plugins/jquery/jquery.min.js"></script>

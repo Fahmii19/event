@@ -9,6 +9,16 @@ class DataKegiatan extends CI_Model
         return $this->db->get($this->table)->result();
     }
 
+    public function get($id = null)
+    {
+        $this->db->from('kegiatan');
+        if ($id != null) {
+            $this->db->where('id', $id);
+        }
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function delete($id)
     {
         $sql = "DELETE FROM kegiatan WHERE id=?";

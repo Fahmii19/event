@@ -21,7 +21,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?=site_url('/')?>">
                 <img src="<?= base_url() ?>/assets/user/file/logo-nf.png" alt="" width="70" height="34" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,11 @@
                 </form>
 
                 <div style="margin-left:5%">
-                    <button type="button" class="btn btn-block btn-primary">Login</button>
+                    <?php if ($this->session->userdata('role') == NULL || $this->session->userdata('role') == "administrator") { ?>
+                    <a href="<?=site_url('login')?>" class="btn btn-block btn-primary">Login</a>
+                    <?php } else if ($this->session->userdata('role') == "public") { ?>
+                    <a href="<?=site_url('logout')?>" class="btn btn-block btn-primary">Logout</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>

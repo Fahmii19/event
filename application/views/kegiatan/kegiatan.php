@@ -65,7 +65,9 @@
                                         <td><?= $x->narasumber ?></td>
                                         <td><?= $x->tempat ?></td>
                                         <td><?= $x->pic ?></td>
-                                        <td><?= $x->foto_flyer ?></td>
+                                        <td>
+                                            <img src="<?=base_url('uploads/flyer/'.$x->foto_flyer)?>" style="width: 50%">
+                                        </td>
                                         <td>
                                             <a href="kegiatan/edit_kegiatan/<?= $x->id ?>"><button type="button" class="btn btn-warning">Edit</button></a>
 

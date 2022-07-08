@@ -46,7 +46,7 @@
                 }
                 ?>
 
-                <form method="post" action="<?php echo base_url(); ?>kegiatan/save_kegiatan">
+                <form method="post" action="" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <label for="judul">judul</label>
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="harga_tiket">harga_tiket</label>
+                        <label for="harga_tiket">harga tiket</label>
                         <input type="number" class="form-control" id="harga_tiket" name="harga_tiket" placeholder="Masukan harga_tiket">
                     </div>
 
@@ -94,25 +94,19 @@
                         </select>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label for="foto_flyer">foto_flyer</label>
+                    <div class="form-group">
+                        <label for="foto_flyer">foto flyer</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="foto_flyer" name="foto_flyer">
+                            <input type="file" class="form-control custom-file-input" id="foto_flyer" name="foto_flyer">
                             <label class="custom-file-label" for="customFile">Cari Gambar</label>
                         </div>
-                    </div> -->
-
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" id="foto_flyer" name="foto_flyer" value="seminar1.jpg">
                     </div>
-
-
             </div>
-            <!-- /.card -->
 
             <div class="card-footer">
                 <button name="kirim" type="submit" class="btn btn-primary">Simpan</button>
             </div>
+            </form>
     </section>
     <!-- /.content -->
 </div>

@@ -44,7 +44,7 @@
                 }
                 ?>
 
-                <form method="post" action="<?php echo base_url(); ?>kegiatan/aksi_edit">
+                <form method="post" action="" enctype="multipart/form-data">
 
                     <input type="hidden" name="id" value="<?php echo $kegiatan->id; ?>">
 
@@ -85,7 +85,7 @@
                     <div class="form-group">
                         <label>Jenis Kegiatan</label>
                         <select class="custom-select rounded-0" name="jenis_id">
-                            <option value="">Pilih</option>
+                            <option value="<?=$kegiatan->jenis_id?>">-- Tidak Ada Perubahan --</option>
                             <option value="1" <?php echo ($kegiatan->jenis_id ? '1' : 'selected'); ?>>Seminar</option>
                             <option value="2" <?php echo ($kegiatan->jenis_id ? '2' : 'selected'); ?>>Workshop</option>
                             <option value="3" <?php echo ($kegiatan->jenis_id ? '3' : 'selected'); ?>>Event Olah Raga</option>
@@ -94,7 +94,11 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="hidden" class="form-control" id="foto_flyer" name="foto_flyer" value="seminar1.jpg">
+                        <label for="foto_flyer">foto flyer</label>
+                        <div class="custom-file">
+                            <input type="file" class="form-control custom-file-input" id="foto_flyer" name="foto_flyer">
+                            <label class="custom-file-label" for="customFile">Cari Gambar</label>
+                        </div>
                     </div>
 
             </div>
@@ -103,6 +107,7 @@
             <div class="card-footer">
                 <button name="kirim" type="submit" class="btn btn-success">Simpan</button>
             </div>
+            </form>
     </section>
     <!-- /.content -->
 </div>

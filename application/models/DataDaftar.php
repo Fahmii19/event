@@ -29,4 +29,9 @@ class DataDaftar extends CI_Model
     {
         return $this->db->update($this->table, $data, array('id' => $id));
     }
+
+    public function save_daftar($data)
+    {
+        return $this->db->insert($this->table, $data);
+    }
 }

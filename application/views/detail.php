@@ -5,17 +5,72 @@
                 <div class="col-lg-8">
                     <!-- Featured blog post-->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" src="<?= base_url('uploads/flyer/' . $data->foto_flyer) ?>" alt="..." /></a>
                         <div class="card-body">
-                            <div class="small text-muted">Rabu, 06 Juli 2022</div>
-                            <h2 class="card-title">TALKSHOW FOURTYFIVE STATION 2022</h2>
-                            <p class="card-text">
-                                Sobat Muda mau tau peran Radio terhadap industri kreatif
-                                berbasis audio di era digital? Dengan pembicara yang sudah
-                                berpengalaman di bidangnya?
-                            </p>
-                            <br />
-                            <p>Konten tgl,harga dll</p>
+                            <h2 class="card-title"><?php echo $data->judul; ?></h2>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <p>Kapasitas</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php echo $data->kapasitas; ?>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <p>Kapasitas</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php echo $data->kapasitas; ?>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <p>Harga Tiket</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php echo $data->harga_tiket; ?>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <p>Tanggal</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php echo $data->tanggal; ?>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <p>Narasumber</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php echo $data->narasumber; ?>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <p>tempat</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php echo $data->tempat; ?>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <p>pic</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php echo $data->pic; ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -23,23 +78,45 @@
                 <div class="col-lg-4">
                     <!-- Search widget-->
                     <div class="card mb-4">
-                        <div class="card-header">Search</div>
+                        <div class="card-header">Booking</div>
                         <div class="card-body">
-                            <form>
+                            <form method="post" action="<?php echo base_url(); ?>beranda/save_beranda">
+
+
+                                <input type="hidden" name="user_id" value="<?php echo $data->id; ?>">
+
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Kategori</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>- Pilih -</option>
-                                        <option value="1">Mahasiswa</option>
-                                        <option value="2">Umum</option>
-                                    </select>
-                                    <div id="emailHelp" class="form-text">
-                                        We'll never share your email with anyone else.
-                                    </div>
+                                    <label for="tanggal">tanggal</label>
+                                    <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="Masukan tanggal">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Alasan Daftar</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="alasan" rows="3"></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Jenis Kegiatan</label>
+                                    <select class="custom-select rounded-0" name="kegiatan_id">
+                                        <option value="">-- Pilih --</option>
+                                        <option value="1">Seminar</option>
+                                        <option value="2">Workshop</option>
+                                        <option value="3">Event Olah Raga</option>
+                                        <option value="4">Bazaar</option>
+                                        <option value="5">Pelatihan</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Kategori Peserta</label>
+                                    <select class="custom-select rounded-0" name="kategori_peserta_id">
+                                        <option value="">-- Pilih --</option>
+                                        <option value="1">Pelajar</option>
+                                        <option value="2">Mahasiswa</option>
+                                        <option value="3">Karyawan Swasta</option>
+                                        <option value="4">Guru/Dosen</option>
+                                        <option value="5">Umum</option>
+                                        <option value="6">ASN</option>
+                                    </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Kirim</button>
                             </form>

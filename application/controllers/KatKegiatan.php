@@ -14,7 +14,7 @@ class KatKegiatan extends CI_Controller
             echo "<script> alert('Anda belum login, silahkan login terlebih dahulu!');
             history.go(-1); </script>";
         } else if ($this->session->userdata('role') == "public") {
-            echo "<script> alert('Anda sedang login sebagai " .$this->session->userdata('role'). ", silahkan logout terlebih dahulu!');
+            echo "<script> alert('Anda sedang login sebagai " . $this->session->userdata('role') . ", silahkan logout terlebih dahulu!');
             history.go(-1); </script>";
         }
     }
@@ -68,7 +68,7 @@ class KatKegiatan extends CI_Controller
         $data['judul'] = 'Form Edit Kategori Kegiatan';
         $data['kegiatan'] = $this->kategori_kegiatan->getDataKegiatan($id);
 
-        var_dump($data);
+        // var_dump($data);
 
         $this->load->view('partial/header');
         $this->load->view('partial/sidebar');

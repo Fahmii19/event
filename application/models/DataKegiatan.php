@@ -39,4 +39,9 @@ class DataKegiatan extends CI_Model
     {
         return $this->db->update($this->table, $data, array('id' => $id));
     }
+
+    public function getDetails($id)
+    {
+        return $this->db->get_where($this->table, ["id" => $id])->row();
+    }
 }

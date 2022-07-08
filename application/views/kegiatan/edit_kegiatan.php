@@ -85,7 +85,7 @@
                     <div class="form-group">
                         <label>Jenis Kegiatan</label>
                         <select class="custom-select rounded-0" name="jenis_id">
-                            <option value="<?=$kegiatan->jenis_id?>">-- Tidak Ada Perubahan --</option>
+                            <option value="<?= $kegiatan->jenis_id ?>">-- Tidak Ada Perubahan --</option>
                             <option value="1" <?php echo ($kegiatan->jenis_id ? '1' : 'selected'); ?>>Seminar</option>
                             <option value="2" <?php echo ($kegiatan->jenis_id ? '2' : 'selected'); ?>>Workshop</option>
                             <option value="3" <?php echo ($kegiatan->jenis_id ? '3' : 'selected'); ?>>Event Olah Raga</option>

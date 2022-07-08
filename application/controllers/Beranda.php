@@ -6,8 +6,8 @@ class Beranda extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("datakegiatan");
-        $this->load->model("datadaftar");
+        $this->load->model("DataKegiatan");
+        $this->load->model("DataDaftar");
 
         // if ($this->session->userdata('role') == NULL) {
         //     echo "<script> alert('Anda belum login, silahkan login terlebih dahulu!');

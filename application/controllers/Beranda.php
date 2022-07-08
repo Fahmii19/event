@@ -20,7 +20,7 @@ class Beranda extends CI_Controller
 
     public function index()
     {
-        $data['kegiatan'] = $this->datakegiatan->getAll();
+        $data['kegiatan'] = $this->DataKegiatan->getAll();
 
         $this->load->view('partial_user/header');
         $this->load->view('beranda', $data);
@@ -35,7 +35,7 @@ class Beranda extends CI_Controller
     }
     public function details($id)
     {
-        $data['data'] = $this->datakegiatan->getDetails($id);
+        $data['data'] = $this->DataKegiatan->getDetails($id);
 
         // var_dump($data);
 

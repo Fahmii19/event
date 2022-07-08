@@ -7,7 +7,7 @@ class KatKegiatan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("kategori_kegiatan");
+        $this->load->model("Kategori_Kegiatan");
         $this->load->library('form_validation');
 
         if ($this->session->userdata('role') == NULL) {
@@ -22,7 +22,7 @@ class KatKegiatan extends CI_Controller
     public function index()
     {
 
-        $data['kegiatan'] = $this->kategori_kegiatan->getAll();
+        $data['kegiatan'] = $this->Kategori_Kegiatan->getAll();
 
         $data['judul'] = 'Form Mahasiswa';
 
@@ -40,7 +40,7 @@ class KatKegiatan extends CI_Controller
         if ($this->form_validation->run() == true) {
             $data['nama'] = $this->input->post('nama');
 
-            $this->kategori_kegiatan->save_kegiatan($data);
+            $this->Kategori_Kegiatan->save_kegiatan($data);
             redirect('katkegiatan');
         } else {
             $this->load->view('partial/header');
@@ -55,7 +55,7 @@ class KatKegiatan extends CI_Controller
     {
         $id = $this->input->get('id');
 
-        $this->load->model('kategori_kegiatan', 'data');
+        $this->load->model('Kategori_Kegiatan', 'data');
 
         $this->data->delete([$id]);
 
@@ -66,7 +66,7 @@ class KatKegiatan extends CI_Controller
     public function edit_katkegiatan($id)
     {
         $data['judul'] = 'Form Edit Kategori Kegiatan';
-        $data['kegiatan'] = $this->kategori_kegiatan->getDataKegiatan($id);
+        $data['kegiatan'] = $this->Kategori_Kegiatan->getDataKegiatan($id);
 
         // var_dump($data);
 
@@ -85,11 +85,11 @@ class KatKegiatan extends CI_Controller
             $id = $this->input->post('id');
             $data['nama'] = $this->input->post('nama');
 
-            $this->kategori_kegiatan->edit_kegiatan($id, $data);
+            $this->Kategori_Kegiatan->edit_kegiatan($id, $data);
             redirect('katkegiatan');
         } else {
             $id = $this->input->post('id');
-            $data['kegiatan'] = $this->kategori_kegiatan->getDataKegiatan($id);
+            $data['kegiatan'] = $this->Kategori_Kegiatan->getDataKegiatan($id);
 
             $this->load->view('partial/header');
             $this->load->view('partial/sidebar');

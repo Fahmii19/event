@@ -7,14 +7,14 @@ class Daftar extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("datadaftar");
+        $this->load->model("DataDaftar");
         $this->load->library('form_validation');
 
         if ($this->session->userdata('role') == NULL) {
             echo "<script> alert('Anda belum login, silahkan login terlebih dahulu!');
             history.go(-1); </script>";
         } else if ($this->session->userdata('role') == "public") {
-            echo "<script> alert('Anda sedang login sebagai " .$this->session->userdata('role'). ", silahkan logout terlebih dahulu!');
+            echo "<script> alert('Anda sedang login sebagai " . $this->session->userdata('role') . ", silahkan logout terlebih dahulu!');
             history.go(-1); </script>";
         }
     }
@@ -22,7 +22,7 @@ class Daftar extends CI_Controller
     public function index()
     {
 
-        $data['daftar'] = $this->datadaftar->getAll();
+        $data['daftar'] = $this->DataDaftar->getAll();
 
         $this->load->view('partial/header');
         $this->load->view('partial/sidebar');
@@ -45,7 +45,7 @@ class Daftar extends CI_Controller
     {
         $id = $this->input->get('id');
 
-        $this->load->model('datadaftar', 'data');
+        $this->load->model('DataDaftar', 'data');
         $this->data->delete([$id]);
 
         redirect(base_url() . 'daftar', 'refresh');
@@ -85,7 +85,7 @@ class Daftar extends CI_Controller
 
     public function edit_daftar($id)
     {
-        $data['daftar'] = $this->datadaftar->getDatadaftar($id);
+        $data['daftar'] = $this->DataDaftar->getDatadaftar($id);
         $this->load->view('partial/header');
         $this->load->view('partial/sidebar');
         $this->load->view('daftar/edit_daftar', $data);
@@ -104,11 +104,11 @@ class Daftar extends CI_Controller
             $data['alasan'] = $this->input->post('alasan');
             $data['nosertifikat'] = $this->input->post('nosertifikat');
 
-            $this->datadaftar->edit_daftar($id, $data);
+            $this->DataDaftar->edit_daftar($id, $data);
             redirect('daftar');
         } else {
             $id = $this->input->post('id');
-            $data['daftar'] = $this->datadaftar->getDatadaftar($id);
+            $data['daftar'] = $this->DataDaftar->getDatadaftar($id);
 
             $this->load->view('partial/header');
             $this->load->view('partial/sidebar');

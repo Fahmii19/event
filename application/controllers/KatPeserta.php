@@ -7,14 +7,14 @@ class KatPeserta extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("katpeserta_model");
+        $this->load->model("KatPeserta_model");
         $this->load->library('form_validation');
 
         if ($this->session->userdata('role') == NULL) {
             echo "<script> alert('Anda belum login, silahkan login terlebih dahulu!');
             history.go(-1); </script>";
         } else if ($this->session->userdata('role') == "public") {
-            echo "<script> alert('Anda sedang login sebagai " .$this->session->userdata('role'). ", silahkan logout terlebih dahulu!');
+            echo "<script> alert('Anda sedang login sebagai " . $this->session->userdata('role') . ", silahkan logout terlebih dahulu!');
             history.go(-1); </script>";
         }
     }
@@ -22,7 +22,7 @@ class KatPeserta extends CI_Controller
     public function index()
     {
 
-        $data['peserta'] = $this->katpeserta_model->getAll();
+        $data['peserta'] = $this->KatPeserta_model->getAll();
 
         $data['judul'] = 'Form Mahasiswa';
 
@@ -40,7 +40,7 @@ class KatPeserta extends CI_Controller
         if ($this->form_validation->run() == true) {
             $data['nama'] = $this->input->post('nama');
 
-            $this->katpeserta_model->save_peserta($data);
+            $this->KatPeserta_model->save_peserta($data);
             redirect('katpeserta');
         } else {
             $this->load->view('partial/header');
@@ -55,7 +55,7 @@ class KatPeserta extends CI_Controller
     {
         $id = $this->input->get('id');
 
-        $this->load->model('katpeserta_model', 'data');
+        $this->load->model('KatPeserta_model', 'data');
 
         $this->data->delete([$id]);
 
@@ -66,7 +66,7 @@ class KatPeserta extends CI_Controller
     public function edit_katpeserta($id)
     {
         $data['judul'] = 'Form Edit Kategori Peserta';
-        $data['peserta'] = $this->katpeserta_model->getDataPeserta($id);
+        $data['peserta'] = $this->KatPeserta_model->getDataPeserta($id);
         $this->load->view('partial/header');
         $this->load->view('partial/sidebar');
         $this->load->view('kat_peserta/edit_katpeserta', $data);
@@ -82,11 +82,11 @@ class KatPeserta extends CI_Controller
             $id = $this->input->post('id');
             $data['nama'] = $this->input->post('nama');
 
-            $this->katpeserta_model->edit_katpeserta($id, $data);
+            $this->KatPeserta_model->edit_katpeserta($id, $data);
             redirect('katpeserta');
         } else {
             $id = $this->input->post('id');
-            $data['peserta'] = $this->katpeserta_model->getDataPeserta($id);
+            $data['peserta'] = $this->KatPeserta_model->getDataPeserta($id);
 
             $this->load->view('partial/header');
             $this->load->view('partial/sidebar');

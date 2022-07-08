@@ -22,7 +22,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Hallo</h3>
+                <h3 class="card-title">To do List Admin</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -34,8 +34,28 @@
                 </div>
             </div>
             <div class="card-body">
-                <div class="row">
+                <div class="card-group">
+                    <div class="card">
 
+                        <div class="card-body">
+                            <h5 class="text-center"><i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></h5>
+                            <p class="card-text text-center">Kamis, 25 juni 2022</p>
+                        </div>
+                    </div>
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="text-center"><i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></h5>
+                            <p class="card-text text-center">Minggu, 25 Mei 2022</p>
+                        </div>
+                    </div>
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="text-center"><i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></h5>
+                            <p class="card-text text-center">Kamis, 25 April 2022</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /.card-body -->

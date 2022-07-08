@@ -63,7 +63,7 @@ class Beranda extends CI_Controller
 
             // var_dump($data);
 
-            $this->datadaftar->save_daftar($data);
+            $this->DataDaftar->save_daftar($data);
             redirect('beranda');
         } else {
             $this->load->view('partial/header');

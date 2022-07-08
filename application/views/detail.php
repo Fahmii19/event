@@ -9,14 +9,6 @@
                         <div class="card-body">
                             <h2 class="card-title"><?php echo $data->judul; ?></h2>
                             <hr>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <p>Kapasitas</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <?php echo $data->kapasitas; ?>
-                                </div>
-                            </div>
 
                             <div class="row">
                                 <div class="col-md-2">

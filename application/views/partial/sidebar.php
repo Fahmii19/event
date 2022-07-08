@@ -43,7 +43,7 @@
                   </li>
 
                   <li class="nav-item active">
-                      <a href="<?= site_url('katpeserta') ?>" class="nav-link">
+                      <a href="<?= site_url('KatPeserta') ?>" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
                               Kelola Kategori Peserta
@@ -52,7 +52,7 @@
                   </li>
 
                   <li class="nav-item">
-                      <a href="<?= site_url('katkegiatan') ?>" class="nav-link">
+                      <a href="<?= site_url('KatKegiatan') ?>" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
                               Kelola Jenis

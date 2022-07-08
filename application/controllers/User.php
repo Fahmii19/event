@@ -7,14 +7,14 @@ class User extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("datauser");
+        $this->load->model("DataUser");
         $this->load->library('form_validation');
 
         if ($this->session->userdata('role') == NULL) {
             echo "<script> alert('Anda belum login, silahkan login terlebih dahulu!');
             history.go(-1); </script>";
         } else if ($this->session->userdata('role') == "public") {
-            echo "<script> alert('Anda sedang login sebagai " .$this->session->userdata('role'). ", silahkan logout terlebih dahulu!');
+            echo "<script> alert('Anda sedang login sebagai " . $this->session->userdata('role') . ", silahkan logout terlebih dahulu!');
             history.go(-1); </script>";
         }
     }
@@ -22,7 +22,7 @@ class User extends CI_Controller
     public function index()
     {
 
-        $data['user'] = $this->datauser->getAll();
+        $data['user'] = $this->DataUser->getAll();
 
         $this->load->view('partial/header');
         $this->load->view('partial/sidebar');
@@ -45,7 +45,7 @@ class User extends CI_Controller
     {
         $id = $this->input->get('id');
 
-        $this->load->model('datauser', 'data');
+        $this->load->model('DataUser', 'data');
         $this->data->delete([$id]);
 
         redirect(base_url() . 'user', 'refresh');
@@ -72,7 +72,7 @@ class User extends CI_Controller
             $data['status'] = $this->input->post('status');
             $data['role'] = $this->input->post('role');
 
-            $this->datauser->save_user($data);
+            $this->DataUser->save_user($data);
             redirect('user');
         } else {
             $this->load->view('partial/header');
@@ -85,7 +85,7 @@ class User extends CI_Controller
 
     public function edit_user($id)
     {
-        $data['user'] = $this->datauser->getDatauser($id);
+        $data['user'] = $this->DataUser->getDatauser($id);
         $this->load->view('partial/header');
         $this->load->view('partial/sidebar');
         $this->load->view('user/edit_user', $data);
@@ -111,11 +111,11 @@ class User extends CI_Controller
             $data['last_login'] = $this->input->post('last_login');
             $data['status'] = $this->input->post('status');
             $data['role'] = $this->input->post('role');
-            $this->datauser->edit_user($id, $data);
+            $this->DataUser->edit_user($id, $data);
             redirect('user');
         } else {
             $id = $this->input->post('id');
-            $data['user'] = $this->datauser->getDatauser($id);
+            $data['user'] = $this->DataUser->getDatauser($id);
 
             $this->load->view('partial/header');
             $this->load->view('partial/sidebar');

@@ -35,14 +35,7 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-12">
-                        <label>NIM</label>
-                        <p>0110221015</p>
-                    </div>
-                    <div class="col-md-12">
-                        <label>Nama</label>
-                        <p>Muchamad Fahmi</p>
-                    </div>
+
                 </div>
             </div>
             <!-- /.card-body -->

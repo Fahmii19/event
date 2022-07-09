@@ -34,4 +34,11 @@ class DataDaftar extends CI_Model
     {
         return $this->db->insert($this->table, $data);
     }
+
+    public function cekkodesertifikat()
+    {
+        $query = $this->db->query("SELECT MAX(nosertifikat) as nosertifikat_dinamis from daftar");
+        $hasil = $query->row();
+        return $hasil->nosertifikat_dinamis;
+    }
 }

@@ -61,6 +61,12 @@ class Beranda extends CI_Controller
             $data['kategori_peserta_id'] = $this->input->post('kategori_peserta_id');
             $data['nosertifikat'] = 'S-2022-VI-001';
 
+
+            // $getKodeSertifikat = $this->DataDaftar->cekkodesertifikat();
+            // $no = substr($getKodeSertifikat, 3, 4);
+            // $no_dinamis = $no + 1;
+            // $data = array('nosertifikat' => $no_dinamis);
+
             // var_dump($data);
 
             $this->DataDaftar->save_daftar($data);

@@ -73,50 +73,50 @@
                         <div class="card-header">Booking</div>
                         <div class="card-body">
                             <?php if ($this->session->userdata('role') == NULL) { ?>
-                            <div class="text-center">
-                                <p>Anda harus login terlebih dahulu</p>
-                            </div>
+                                <div class="text-center">
+                                    <p>Anda harus login terlebih dahulu</p>
+                                </div>
                             <?php } else { ?>
-                            <form method="post" action="<?php echo base_url(); ?>beranda/save_beranda" class="form-group">
+                                <form method="post" action="<?php echo base_url(); ?>beranda/save_beranda" class="form-group">
 
 
-                                <!-- <input type="hidden" name="user_id" value="<?php echo $data->id; ?>"> -->
+                                    <input type="hidden" name="id" value="<?php echo $data->id; ?>">
 
-                                <div class="mb-3">
-                                    <label for="tanggal">tanggal</label>
-                                    <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="Masukan tanggal">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Alasan Daftar</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="alasan" rows="3"></textarea>
-                                </div>
+                                    <div class="mb-3">
+                                        <label for="tanggal">tanggal</label>
+                                        <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="Masukan tanggal">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Alasan Daftar</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" name="alasan" rows="3"></textarea>
+                                    </div>
 
-                                <div class="mb-3">
-                                    <label>Jenis Kegiatan</label>
-                                    <select class="custom-select rounded-0 form-control" name="kegiatan_id">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="1">Seminar</option>
-                                        <option value="2">Workshop</option>
-                                        <option value="3">Event Olah Raga</option>
-                                        <option value="4">Bazaar</option>
-                                        <option value="5">Pelatihan</option>
-                                    </select>
-                                </div>
+                                    <div class="mb-3">
+                                        <label>Jenis Kegiatan</label>
+                                        <select class="custom-select rounded-0 form-control" name="kegiatan_id">
+                                            <option value="">-- Pilih --</option>
+                                            <option value="1">Seminar</option>
+                                            <option value="2">Workshop</option>
+                                            <option value="3">Event Olah Raga</option>
+                                            <option value="4">Bazaar</option>
+                                            <option value="5">Pelatihan</option>
+                                        </select>
+                                    </div>
 
-                                <div class="mb-3">
-                                    <label>Kategori Peserta</label>
-                                    <select class="custom-select rounded-0 form-control" name="kategori_peserta_id">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="1">Pelajar</option>
-                                        <option value="2">Mahasiswa</option>
-                                        <option value="3">Karyawan Swasta</option>
-                                        <option value="4">Guru/Dosen</option>
-                                        <option value="5">Umum</option>
-                                        <option value="6">ASN</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Kirim</button>
-                            </form>
+                                    <div class="mb-3">
+                                        <label>Kategori Peserta</label>
+                                        <select class="custom-select rounded-0 form-control" name="kategori_peserta_id">
+                                            <option value="">-- Pilih --</option>
+                                            <option value="1">Pelajar</option>
+                                            <option value="2">Mahasiswa</option>
+                                            <option value="3">Karyawan Swasta</option>
+                                            <option value="4">Guru/Dosen</option>
+                                            <option value="5">Umum</option>
+                                            <option value="6">ASN</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Kirim</button>
+                                </form>
                             <?php } ?>
                         </div>
                     </div>

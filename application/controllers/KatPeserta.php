@@ -41,7 +41,7 @@ class KatPeserta extends CI_Controller
             $data['nama'] = $this->input->post('nama');
 
             $this->KatPeserta_model->save_peserta($data);
-            redirect('katpeserta');
+            redirect('katPeserta');
         } else {
             $this->load->view('partial/header');
             $this->load->view('partial/sidebar');
@@ -83,7 +83,7 @@ class KatPeserta extends CI_Controller
             $data['nama'] = $this->input->post('nama');
 
             $this->KatPeserta_model->edit_katpeserta($id, $data);
-            redirect('katpeserta');
+            redirect('KatPeserta');
         } else {
             $id = $this->input->post('id');
             $data['peserta'] = $this->KatPeserta_model->getDataPeserta($id);

@@ -59,7 +59,7 @@ class KatKegiatan extends CI_Controller
 
         $this->data->delete([$id]);
 
-        redirect(base_url() . 'katkegiatan', 'refresh');
+        redirect(base_url() . 'KatKegiatan', 'refresh');
         return;
     }
 
@@ -86,7 +86,7 @@ class KatKegiatan extends CI_Controller
             $data['nama'] = $this->input->post('nama');
 
             $this->Kategori_Kegiatan->edit_kegiatan($id, $data);
-            redirect('katkegiatan');
+            redirect('KatKegiatan');
         } else {
             $id = $this->input->post('id');
             $data['kegiatan'] = $this->Kategori_Kegiatan->getDataKegiatan($id);

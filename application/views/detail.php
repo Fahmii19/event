@@ -72,10 +72,15 @@
                     <div class="card mb-4">
                         <div class="card-header">Booking</div>
                         <div class="card-body">
-                            <form method="post" action="<?php echo base_url(); ?>beranda/save_beranda">
+                            <?php if ($this->session->userdata('role') == NULL) { ?>
+                            <div class="text-center">
+                                <p>Anda harus login terlebih dahulu</p>
+                            </div>
+                            <?php } else { ?>
+                            <form method="post" action="<?php echo base_url(); ?>beranda/save_beranda" class="form-group">
 
 
-                                <input type="hidden" name="user_id" value="<?php echo $data->id; ?>">
+                                <!-- <input type="hidden" name="user_id" value="<?php echo $data->id; ?>"> -->
 
                                 <div class="mb-3">
                                     <label for="tanggal">tanggal</label>
@@ -88,7 +93,7 @@
 
                                 <div class="mb-3">
                                     <label>Jenis Kegiatan</label>
-                                    <select class="custom-select rounded-0" name="kegiatan_id">
+                                    <select class="custom-select rounded-0 form-control" name="kegiatan_id">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Seminar</option>
                                         <option value="2">Workshop</option>
@@ -100,7 +105,7 @@
 
                                 <div class="mb-3">
                                     <label>Kategori Peserta</label>
-                                    <select class="custom-select rounded-0" name="kategori_peserta_id">
+                                    <select class="custom-select rounded-0 form-control" name="kategori_peserta_id">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Pelajar</option>
                                         <option value="2">Mahasiswa</option>
@@ -112,6 +117,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">Kirim</button>
                             </form>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

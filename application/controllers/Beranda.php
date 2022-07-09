@@ -54,7 +54,7 @@ class Beranda extends CI_Controller
 
         if ($this->form_validation->run() == true) {
 
-            $data['users_id'] = $this->input->post('user_id');
+            $data['users_id'] = $this->session->userdata('id');
             $data['tanggal_daftar'] = $this->input->post('tanggal');
             $data['alasan'] = $this->input->post('alasan');
             $data['kegiatan_id'] = $this->input->post('kegiatan_id');
@@ -66,10 +66,8 @@ class Beranda extends CI_Controller
             $this->DataDaftar->save_daftar($data);
             redirect('beranda');
         } else {
-            $this->load->view('partial/header');
-            $this->load->view('partial/sidebar');
-            $this->load->view('kat_kegiatan/kat_kegiatan');
-            $this->load->view('partial/footer');
+            echo "<script> alert('Masukkan semua data terlebih dahulu!');
+            history.go(-1); </script>";
         }
     }
 }

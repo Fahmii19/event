@@ -81,6 +81,7 @@
 
 
                                     <input type="hidden" name="id" value="<?php echo $data->id; ?>">
+                                    <input type="hidden" name="nosertifikat" value="S-2022-VI-<?php echo sprintf("%04s", $nosertifikat); ?>">
 
                                     <div class="mb-3">
                                         <label for="tanggal">tanggal</label>

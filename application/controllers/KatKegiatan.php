@@ -41,7 +41,7 @@ class KatKegiatan extends CI_Controller
             $data['nama'] = $this->input->post('nama');
 
             $this->Kategori_Kegiatan->save_kegiatan($data);
-            redirect('katkegiatan');
+            redirect('KatKegiatan');
         } else {
             $this->load->view('partial/header');
             $this->load->view('partial/sidebar');

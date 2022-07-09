@@ -52,8 +52,8 @@
                                         <td><?= $nomor ?></td>
                                         <td><?= $x->nama ?></td>
                                         <td>
-                                            <a href="katkegiatan/edit_katkegiatan/<?= $x->id ?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                            <a href="katkegiatan/delete?id=<?= $x->id ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
+                                            <a href="KatKegiatan/edit_katkegiatan/<?= $x->id ?>"><button type="button" class="btn btn-warning">Edit</button></a>
+                                            <a href="KatKegiatan/delete?id=<?= $x->id ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
                                         </td>
                                     </tr>
                                 <?php
@@ -71,7 +71,7 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form method="post" action="<?php echo base_url(); ?>katkegiatan/save_kegiatan">
+                            <form method="post" action="<?php echo base_url(); ?>KatKegiatan/save_kegiatan">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="nama">Kategori</label>

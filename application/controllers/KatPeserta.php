@@ -59,7 +59,7 @@ class KatPeserta extends CI_Controller
 
         $this->data->delete([$id]);
 
-        redirect(base_url() . 'katpeserta', 'refresh');
+        redirect(base_url() . 'KatPeserta', 'refresh');
         return;
     }
 

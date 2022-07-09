@@ -47,7 +47,7 @@
                 }
                 ?>
 
-                <form method="post" action="<?php echo base_url(); ?>kakkegiatan/aksi_edit">
+                <form method="post" action="<?php echo base_url(); ?>KatKegiatan/aksi_edit">
                     <input type="hidden" name="id" value="<?php echo $kegiatan->id; ?>">
 
                     <div class="form-group">
